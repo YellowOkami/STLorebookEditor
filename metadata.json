@@ -1,0 +1,5 @@
+{
+  "name": "Copy of SillyTavern Lorebook Editor",
+  "description": "A local web application to import, edit, and export SillyTavern lorebook JSON files. It provides a user-friendly interface for managing lorebook entries, including their titles, tags, and content with Markdown preview.",
+  "requestFramePermissions": []
+}
