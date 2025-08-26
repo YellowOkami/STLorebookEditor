@@ -21,7 +21,7 @@ const parseMarkdown = (text: string): string => {
   html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
   // `Inline code`
-  html = html.replace(/`([^`]+)`/g, '<code class="bg-stone-200 dark:bg-stone-700 rounded px-1.5 py-0.5 font-mono text-sm text-stone-800 dark:text-stone-200">$1</code>');
+  html = html.replace(/`([^`]+)`/g, '<code class="bg-[var(--color-prose-code-bg)] text-[var(--color-prose-code-text)] rounded px-1.5 py-0.5 font-mono text-sm">$1</code>');
   
   // * list item
   html = html.replace(/^\s*[\*\-\+]\s+(.*$)/gim, '<div class="flex items-start pl-4"><span class="mr-2">&bull;</span><div class="flex-1">$1</div></div>');
@@ -39,5 +39,5 @@ const parseMarkdown = (text: string): string => {
 export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ text }) => {
   const processedHtml = parseMarkdown(text);
 
-  return <div dangerouslySetInnerHTML={{ __html: processedHtml }} />;
+  return <div className="text-[var(--color-text-primary)]" dangerouslySetInnerHTML={{ __html: processedHtml }} />;
 };

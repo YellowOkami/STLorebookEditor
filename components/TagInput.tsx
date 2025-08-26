@@ -30,14 +30,14 @@ export const TagInput: React.FC<TagInputProps> = ({ tags, onChange }) => {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-2 p-2 border border-stone-300 dark:border-stone-600 rounded-md bg-stone-50 dark:bg-stone-700 focus-within:ring-2 focus-within:ring-stone-500 focus-within:border-stone-500">
+    <div className="flex flex-wrap items-center gap-2 p-2 border border-[var(--color-border)] rounded-md bg-[var(--color-bg-primary)] focus-within:ring-2 focus-within:ring-[var(--color-accent)] focus-within:border-[var(--color-accent)]">
       {tags.map((tag, index) => (
-        <div key={index} className="flex items-center bg-stone-200 text-stone-700 dark:bg-stone-600 dark:text-stone-200 text-sm font-medium px-2 py-1 rounded-full">
+        <div key={index} className="flex items-center bg-[var(--color-bg-tertiary)] text-[var(--color-text-primary)] text-sm font-medium px-2 py-1 rounded-full">
           <span>{tag}</span>
           <button
             type="button"
             onClick={() => removeTag(tag)}
-            className="ml-2 text-stone-500 dark:text-stone-300 hover:text-stone-800 dark:hover:text-stone-100"
+            className="ml-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
             aria-label={`Remove ${tag} tag`}
           >
             &times;
@@ -50,7 +50,7 @@ export const TagInput: React.FC<TagInputProps> = ({ tags, onChange }) => {
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
         placeholder="Add a tag..."
-        className="flex-grow bg-transparent focus:outline-none p-1 min-w-[100px]"
+        className="flex-grow bg-transparent focus:outline-none p-1 min-w-[100px] text-[var(--color-text-primary)]"
       />
     </div>
   );
